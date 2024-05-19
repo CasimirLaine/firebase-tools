@@ -1,6 +1,6 @@
 {
   "database": {
-    "rules": "database_rules.json"
+    "rules": "database.rules.json"
   },
   "firestore": {
     "rules": "firestore.rules",
@@ -10,34 +10,48 @@
     "rules": "storage.rules"
   },
   "emulators": {
+    "hub": {
+      "host": "0.0.0.0",
+      "port": 4400
+    },
+    "logging": {
+      "host": "0.0.0.0",
+      "port": 4500
+    },
     "firestore": {
+      "host": "0.0.0.0",
       "enabled": true,
       "port": 8081
     },
     "database": {
+      "host": "0.0.0.0",
       "enabled": true,
       "port": 9000
     },
     "pubsub": {
-      "enabled": false,
+      "host": "0.0.0.0",
+      "enabled": true,
       "port": 8085
     },
     "storage": {
+      "host": "0.0.0.0",
       "enabled": true,
-      "port": 9023
+      "port": 9199
     },
     "ui": {
+      "host": "0.0.0.0",
       "enabled": true,
       "port": 4000
     },
     "functions": {
+      "host": "0.0.0.0",
+      "enabled": false,
       "port": 5001
     },
     "auth": {
+      "host": "0.0.0.0",
+      "enabled": true,
       "port": 9099
     }
-  },
-  "functions": {
-    "source": "functions"
   }
 }
