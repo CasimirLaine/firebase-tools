@@ -123,3 +123,4 @@ __pycache__
 *.prof
 .idea/misc.xml
 .idea/sonarlint/
+/firebase-data

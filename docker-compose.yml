@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  firebase-emulators:
+    build: .
+    container_name: firebase-emulators
+    volumes:
+      - ./firebase-data:/firebase/firebase-data
+    ports:
+      - 4000:4000
+      - 8081:8081
+      - 9000:9000
+      - 8085:8085
+      - 9199:9199
+      - 9099:9099
+    restart: unless-stopped

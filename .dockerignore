@@ -6,3 +6,4 @@
 !firestore.rules
 !storage.rules
 !credentials/firebase-emulator-agent.json
+!export_data.sh
