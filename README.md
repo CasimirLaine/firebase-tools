@@ -1,4 +1,4 @@
-# firebase-tools-config
+# firebase-tools
 
 ## Firebase Emulators Dockerized
 
