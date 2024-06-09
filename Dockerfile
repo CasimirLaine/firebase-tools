@@ -1,16 +1,18 @@
-FROM alpine:3.16.2 AS build
-RUN apk update && apk add --no-cache  \
+FROM alpine:3.20.0 AS build
+RUN apk update && apk upgrade && apk add --no-cache  \
+    nodejs \
     npm \
     openjdk11-jre \
-    bash \
     dcron \
-    && rm -rf /var/cache/apk/* \
     && npm install -g firebase-tools@13.11.2 \
     && firebase setup:emulators:firestore \
     && firebase setup:emulators:database \
     && firebase setup:emulators:pubsub \
     && firebase setup:emulators:storage \
-    && firebase setup:emulators:ui
+    && firebase setup:emulators:ui \
+    && npm cache clean --force \
+    && apk --purge del npm \
+    && rm -rf /var/cache/apk/*
 ENV APP_HOME /firebase
 WORKDIR $APP_HOME
 
