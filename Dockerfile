@@ -18,7 +18,9 @@ WORKDIR $APP_HOME
 
 COPY export_data.sh /firebase/export_data.sh
 RUN chmod +x /firebase/export_data.sh \
-    && echo "*/1 * * * * /firebase/export_data.sh" | crontab -
+    && echo "*/1 * * * * /firebase/export_data.sh" | crontab - \
+    && adduser -D -h /home/appuser appuser
+USER appuser
 
 COPY . .
 EXPOSE 8081 9000 8085 9199 4000 5001 9099
